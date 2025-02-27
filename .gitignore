@@ -1,0 +1,10 @@
+yolo_dataset
+runs
+predictions
+image_chips_native-20250212T103727Z-001
+labels
+datasets
+labels-20250212T103318Z-001.zip
+labels-20250212T103318Z-001
+yolo11n.pt 
+yolov8s.pt

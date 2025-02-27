@@ -1,0 +1,3 @@
+yolo_dataset/images/test/solarpanels_native_1__x0_0_y0_8042_dxdy_416.tif
+/fab3/btech/2022/snehanshu.pal22b/SolarPanel/yolo_dataset/images/test/solarpanels_native_1__x0_913_y0_8939_dxdy_416.tif
+/fab3/btech/2022/snehanshu.pal22b/SolarPanel/yolo_dataset/images/test/solarpanels_native_3__x0_14482_y0_113_dxdy_416.tif
