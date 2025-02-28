@@ -41,6 +41,37 @@ def match_labels_to_images():
 
     return matched_pairs
 
+def analyze_label_distribution(matched_pairs):
+    """
+    Analyzes how many images have X number of labels.
+    Returns a sorted distribution of label counts.
+    """
+    # Initialize label counts per image
+    label_counts = []
+    
+    # Count labels for each image
+    for label_file, _ in matched_pairs:
+        with open(os.path.join(LABELS_DIR, label_file), "r") as file:
+            num_labels = len(file.readlines())
+            label_counts.append(num_labels)
+    
+    # Find range of labels
+    min_labels = min(label_counts)
+    max_labels = max(label_counts)
+    
+    # Create distribution analysis
+    distribution = {}
+    for count in range(min_labels, max_labels + 1):
+        num_images = label_counts.count(count)
+        if num_images > 0:  # Only include counts that have images
+            distribution[count] = num_images
+    
+    # Convert to DataFrame and sort by number of labels
+    df = pd.DataFrame.from_dict(distribution, orient='index', columns=['Number of Images'])
+    df.index.name = 'Number of Labels'
+    
+    return df
+
 def count_solar_panels(matched_pairs):
     """Counts total instances of solar panels and label distribution per image."""
     total_instances = 0
@@ -99,6 +130,11 @@ matched_pairs = match_labels_to_images()
 total_instances, label_counts = count_solar_panels(matched_pairs)
 areas, mean_area, std_area = compute_area_statistics(matched_pairs)
 print("Label Count Distribution:", label_counts)
+
+print("\nDistribution of labels per image:")
+label_distribution = analyze_label_distribution(matched_pairs)
+print(label_distribution)
+
 # Display results
 print(f"Total Solar Panel Instances: {total_instances}")
 print("\nLabel Count Distribution:")

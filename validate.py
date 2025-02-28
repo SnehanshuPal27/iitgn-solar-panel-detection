@@ -49,8 +49,11 @@ def evaluate_predictions(image_path):
     iou_scores = []
     for gt in gt_boxes:
         for pred in pred_boxes:
+            print("pred",pred)
+            print("gt",gt)
             iou_shapely = compute_iou_shapely(gt, pred)
             iou_supervision = compute_iou_supervision(gt, pred)
+            print(iou_shapely,"->",iou_supervision)
             iou_scores.append((iou_shapely, iou_supervision))
     
     return iou_scores, pred_boxes, gt_boxes

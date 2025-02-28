@@ -1,0 +1,3 @@
+Pascal VOC 11-point AP: 0.0818
+COCO 101-point AP: 0.0921
+AUC-PR AP: 0.0450

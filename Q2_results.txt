@@ -1,0 +1,2 @@
+Mean Area: 0.01 sq. meters
+Standard Deviation: 0.04 sq. meters
