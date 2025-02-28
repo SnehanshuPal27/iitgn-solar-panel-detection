@@ -592,3 +592,5 @@ Model summary (fused): 168 layers, 11,125,971 parameters, 0 gradients, 28.4 GFLO
 Speed: 2.3ms preprocess, 3.1ms inference, 0.0ms loss, 4.3ms postprocess per image
 Results saved to [1mruns/detect/train6[0m
 
+2025/02/28 10:36:21 NOTICE: Time may be set wrong - time from "oauth2.googleapis.com" is -40m54.131981098s different from this computer
+2025/02/28 10:36:22 NOTICE: Time may be set wrong - time from "www.googleapis.com" is -40m54.329576852s different from this computer
